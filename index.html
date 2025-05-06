@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shreya Teli's Mini Blog</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #00bfff;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+    }
+    .whale {
+      font-size: 2em;
+    }
+
+    .inspiration {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .inspiration button {
+      padding: 10px 20px;
+      background-color: #00bfff;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .inspiration button:hover {
+      background-color: #009acd;
+    }
+
+    .quote-box {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #00ffff;
+      font-style: italic;
+      padding: 15px;
+      border: 2px dashed #00bfff;
+      border-radius: 15px;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #111;
+      box-shadow: 0 0 10px #00bfff88;
+    }
+
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .blog {
+      background-color: #111;
+      border: 2px solid #00bfff;
+      padding: 20px;
+      border-radius: 20px;
+      width: 280px;
+      box-shadow: 0 0 10px #00bfff50;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .blog:hover {
+      transform: scale(1.05);
+    }
+
+    .blog p {
+      font-size: 1em;
+    }
+
+    .delete-btn {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px; /* Move button to the bottom */
+    }
+
+    .add-blog {
+      text-align: center;
+      margin: 40px 20px;
+    }
+
+    .add-blog textarea {
+      width: 80%;
+      height: 100px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #00bfff;
+      background-color: #000;
+      color: #00bfff;
+    }
+
+    .add-blog button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #00bfff;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .doodle {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 3em;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 40px;
+      background-color: #111;
+    }
+
+    .socials a {
+      margin: 0 15px;
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #00bfff;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #ffffff;
+    }
+
+    .contact {
+      margin-top: 30px;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 1.1em;
+    }
+
+    .copyright {
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="font-size: 3em; color: #87f0ff; text-shadow: 2px 2px 5px #00bfff; margin: 0;">WHALE WHIMSY 🐳</h1>
+        <p style="margin-top: 10px; font-size: 1.2em; color: #add8e6;">Hi, I am Shreya Teli — welcome to my cozy little blog corner 💙</p>
+      </header>
+      
+
+  <!-- Inspiration Section -->
+  <div class="inspiration">
+    <button onclick="showQuote()">💭 Get Inspired</button>
+    <div id="quoteBox" class="quote-box"></div>
+  </div>
+
+  <!-- Mini Blog Section -->
+  <div class="blog-container" id="blogContainer">
+    <div class="blog">
+      <p>"Take a deep breath and start again 💫"</p>
+      <button class="delete-btn" onclick="deleteBlog(this)">Delete</button>
+    </div>
+    <div class="blog">
+      <p>"Tiny steps every day lead to big changes. 🌱"</p>
+      <button class="delete-btn" onclick="deleteBlog(this)">Delete</button>
+    </div>
+  </div>
+
+  <div class="add-blog">
+    <textarea id="newBlog" placeholder="Write your own blog line... ✨"></textarea><br>
+    <button onclick="addBlog()">Add Blog</button>
+  </div>
+
+  <div class="doodle">🌙✨🐾🎀🌸</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="socials">
+        <a href="https://www.instagram.com/shreyaa.teli?igsh=aTQzd3VpaW8wNzBz" target="_blank"> Instagram</a>
+        <a href="https://www.linkedin.com/in/shreya-h-teli-84aa58307" target="_blank"> LinkedIn</a>
+        <a href="https://github.com/shreyateli" target="_blank"> GitHub</a>        
+    </div>
+
+    <div class="contact">
+      <h3>Contact Me 📬</h3>
+      <p>Email: shreya@example.com</p>
+      <p>Feel free to connect with me!</p>
+    </div>
+
+    <div class="signature">
+      ✨ Built with love by Shreya Teli 🌙
+    </div>
+    <div class="copyright">
+      © 2025 Shreya Teli. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function addBlog() {
+      const text = document.getElementById("newBlog").value.trim();
+      if (!text) {
+        alert("Please write something!");
+        return;
+      }
+
+      const blogBox = document.createElement("div");
+      blogBox.className = "blog";
+      blogBox.innerHTML = `
+        <p>${text}</p>
+        <button class="delete-btn" onclick="deleteBlog(this)">Delete</button>
+      `;
+      document.getElementById("blogContainer").appendChild(blogBox);
+      document.getElementById("newBlog").value = "";
+    }
+
+    function deleteBlog(btn) {
+      const blog = btn.parentElement;
+      blog.remove();
+    }
+
+    function showQuote() {
+      const quotes = [
+        "Keep going, you're getting there 🌱",
+        "Dream big, start small, act now 💡",
+        "Even a whale swims one wave at a time 🐳",
+        "Your vibe attracts your tribe ✨",
+        "You’re doing better than you think 🌈",
+        "Bloom where you're planted 🌸",
+        "Stars can't shine without darkness 🌟"
+      ];
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("quoteBox").textContent = random;
+    }
+  </script>
+
+</body>
+</html>
